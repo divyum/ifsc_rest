@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Branches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ifsc</th>
+      <th>Bank</th>
+      <th>Branch</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>District</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @branches.each do |branch| %>
+      <tr>
+        <td><%= branch.ifsc %></td>
+        <td><%= branch.bank_id %></td>
+        <td><%= branch.branch %></td>
+        <td><%= branch.address %></td>
+        <td><%= branch.city %></td>
+        <td><%= branch.district %></td>
+        <td><%= branch.state %></td>
+        <td><%= link_to 'Show', branch %></td>
+        <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
+        <td><%= link_to 'Destroy', branch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Branch', new_branch_path %>

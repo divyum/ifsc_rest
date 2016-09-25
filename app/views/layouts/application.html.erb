@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IfscRest</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h2> IFSC REST API </h2>
+<ul>
+	<li><h4>/ifsc/ifsc_code - to get branch details using ifsc</h4></li>
+	<li><h4>/bank?name=bank_name&city=city - get branch details of all the branches in the city</h4></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
