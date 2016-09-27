@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   	if error.empty?
   		bank = branch[0].bank.name
-  		render json: {bank => branch}
+  		render json: branch
   	else
   		render json: {error: error}
   	end
@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
   	end
 
   	if error.empty?
-  		render json: { bank[0].name => branches_json }
+  		render json: branches_json
   	else
   		render json: {error: error}
   	end
